@@ -18,7 +18,8 @@
  * they are useful in identifying invalid memory access bugs
  * so we enable them in debug mode.
  */
-#ifdef DEBUG
+/* AWH - Mask async aborts in debug kernels */
+#if 0 /* AWH def DEBUG */
 #define CPSR_EXTRA_FLAGS 0
 #else
 #define CPSR_EXTRA_FLAGS PMASK_ASYNC_ABORT
